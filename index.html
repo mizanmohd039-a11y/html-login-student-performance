@@ -20,101 +20,158 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #2563eb, #7c3aed);
-            padding: 20px;
+            padding: 30px 15px;
+
+            /* Background */
+            background: linear-gradient(135deg, #dbeafe, #ede9fe);
         }
 
         .container {
             width: 100%;
-            max-width: 480px;
+            max-width: 500px;
         }
 
         .form-box {
-            background: redish white;
+            background: #ffffff;
             padding: 35px;
-            border-radius: 18px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.15);
         }
 
+        /* Logo */
         .logo {
-            text-align: center;
-            font-size: 45px;
-            margin-bottom: 10px;
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 15px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: #2563eb;
+            border-radius: 50%;
+
+            font-size: 38px;
         }
 
+        /* Heading */
         h1 {
             text-align: center;
             color: #1e3a8a;
             font-size: 28px;
+            margin-bottom: 5px;
         }
 
         h2 {
             text-align: center;
             color: #2563eb;
             font-size: 20px;
-            margin-top: 5px;
+            margin-bottom: 10px;
         }
 
         .subtitle {
             text-align: center;
             color: #666;
-            margin: 12px 0 25px;
             font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        /* Form */
+        .form-group {
+            margin-bottom: 17px;
         }
 
         label {
             display: block;
-            margin-top: 15px;
-            margin-bottom: 6px;
-            font-weight: bold;
+            margin-bottom: 7px;
+
             color: #333;
-        }
-
-        input,
-        select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 15px;
-            outline: none;
-        }
-
-        input:focus,
-        select:focus {
-            border-color: #2563eb;
-            box-shadow: 0 0 5px rgba(37, 99, 235, 0.2);
-        }
-
-        button {
-            width: 100%;
-            margin-top: 25px;
-            padding: 14px;
-            border: none;
-            border-radius: 8px;
-            background: #2563eb;
-            color: white;
-            font-size: 17px;
+            font-size: 14px;
             font-weight: bold;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #1d4ed8;
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 20px;
-            color: #777;
-            font-size: 12px;
         }
 
         .required {
             color: red;
         }
+
+        input,
+        select {
+            width: 100%;
+            padding: 13px;
+
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+
+            font-size: 15px;
+            background: #ffffff;
+
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #2563eb;
+
+            box-shadow:
+                0 0 0 3px rgba(37, 99, 235, 0.12);
+        }
+
+        /* Button */
+        button {
+            width: 100%;
+            padding: 14px;
+
+            margin-top: 8px;
+
+            border: none;
+            border-radius: 8px;
+
+            background: #2563eb;
+            color: white;
+
+            font-size: 17px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 22px;
+
+            color: #777;
+            font-size: 12px;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+
+            .form-box {
+                padding: 25px 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
+
 
 <body>
 
@@ -122,181 +179,207 @@
 
         <div class="form-box">
 
-            <div class="logo">🎓</div>
+            <!-- Logo -->
+            <div class="logo">
+                🎓
+            </div>
 
+            <!-- Title -->
             <h1>Student Performance</h1>
+
             <h2>Prediction System</h2>
 
             <p class="subtitle">
-                Please enter your details to continue
+                Enter your details to continue
             </p>
 
+
+            <!-- Form -->
             <form onsubmit="continueToPrediction(event)">
 
-                <label>
-                    Student Name <span class="required">*</span>
-                </label>
 
-                <input
-                    type="text"
-                    id="name"
-                    placeholder="Enter your full name"
-                    required
-                >
+                <!-- Student Name -->
+                <div class="form-group">
 
+                    <label for="name">
+                        Student Name
+                        <span class="required">*</span>
+                    </label>
 
-                <label>
-                    Gmail <span class="required">*</span>
-                </label>
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your full name"
+                        required
+                    >
 
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="example@gmail.com"
-                    required
-                >
+                </div>
 
 
-                <label>
-                    Phone Number <span class="required">*</span>
-                </label>
+                <!-- Gmail -->
+                <div class="form-group">
 
-                <input
-                    type="tel"
-                    id="phone"
-                    placeholder="Enter 10-digit phone number"
-                    pattern="[0-9]{10}"
-                    required
-                >
+                    <label for="email">
+                        Gmail
+                        <span class="required">*</span>
+                    </label>
 
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="example@gmail.com"
+                        required
+                    >
 
-                <label>
-                    Branch <span class="required">*</span>
-                </label>
-
-                <select id="branch" required>
-
-                    <option value="">
-                        Select your branch
-                    </option>
-
-                    <option value="CSE">
-                        Computer Science & Engineering
-                    </option>
-
-                    <option value="IT">
-                        Information Technology
-                    </option>
-
-                    <option value="ECE">
-                        Electronics & Communication Engineering
-                    </option>
-
-                    <option value="EEE">
-                        Electrical & Electronics Engineering
-                    </option>
-
-                    <option value="ME">
-                        Mechanical Engineering
-                    </option>
-
-                    <option value="CE">
-                        Civil Engineering
-                    </option>
-
-                </select>
+                </div>
 
 
-                <label>
-                    Course <span class="required">*</span>
-                </label>
+                <!-- Phone -->
+                <div class="form-group">
 
-                <select id="course" required>
+                    <label for="phone">
+                        Phone Number
+                        <span class="required">*</span>
+                    </label>
 
-                    <option value="">
-                        Select your course
-                    </option>
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Enter 10-digit phone number"
+                        pattern="[0-9]{10}"
+                        maxlength="10"
+                        required
+                    >
 
-                    <option value="B.Tech">
-                        B.Tech
-                    </option>
-
-                    <option value="BCA">
-                        BCA
-                    </option>
-
-                    <option value="B.Sc">
-                        B.Sc
-                    </option>
-
-                    <option value="MCA">
-                        MCA
-                    </option>
-
-                    <option value="M.Tech">
-                        M.Tech
-                    </option>
-
-                </select>
+                </div>
 
 
-                <label>
-                    Year <span class="required">*</span>
-                </label>
+                <!-- Branch -->
+                <div class="form-group">
 
-                <select id="year" required>
+                    <label for="branch">
+                        Branch
+                        <span class="required">*</span>
+                    </label>
 
-                    <option value="">
-                        Select your year
-                    </option>
+                    <select id="branch" required>
 
-                    <option value="1st Year">
-                        1st Year
-                    </option>
+                        <option value="">
+                            Select your branch
+                        </option>
 
-                    <option value="2nd Year">
-                        2nd Year
-                    </option>
+                        <option value="CSE">
+                            Computer Science & Engineering
+                        </option>
 
-                    <option value="3rd Year">
-                        3rd Year
-                    </option>
+                        <option value="IT">
+                            Information Technology
+                        </option>
 
-                    <option value="4th Year">
-                        4th Year
-                    </option>
+                        <option value="ECE">
+                            Electronics & Communication Engineering
+                        </option>
 
-                </select>
+                        <option value="EEE">
+                            Electrical & Electronics Engineering
+                        </option>
 
+                        <option value="ME">
+                            Mechanical Engineering
+                        </option>
 
-                <label>
-                    Semester
-                </label>
+                        <option value="CE">
+                            Civil Engineering
+                        </option>
 
-                <select id="semester">
+                    </select>
 
-                    <option value="">
-                        Select semester
-                    </option>
-
-                    <option>1st Semester</option>
-                    <option>2nd Semester</option>
-                    <option>3rd Semester</option>
-                    <option>4th Semester</option>
-                    <option>5th Semester</option>
-                    <option>6th Semester</option>
-                    <option>7th Semester</option>
-                    <option>8th Semester</option>
-
-                </select>
+                </div>
 
 
+                <!-- Course -->
+                <div class="form-group">
+
+                    <label for="course">
+                        Course
+                        <span class="required">*</span>
+                    </label>
+
+                    <select id="course" required>
+
+                        <option value="">
+                            Select your course
+                        </option>
+
+                        <option value="B.Tech">
+                            B.Tech
+                        </option>
+
+                        <option value="BCA">
+                            BCA
+                        </option>
+
+                        <option value="B.Sc">
+                            B.Sc
+                        </option>
+
+                        <option value="MCA">
+                            MCA
+                        </option>
+
+                        <option value="M.Tech">
+                            M.Tech
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Year -->
+                <div class="form-group">
+
+                    <label for="year">
+                        Year
+                        <span class="required">*</span>
+                    </label>
+
+                    <select id="year" required>
+
+                        <option value="">
+                            Select your year
+                        </option>
+
+                        <option value="1st Year">
+                            1st Year
+                        </option>
+
+                        <option value="2nd Year">
+                            2nd Year
+                        </option>
+
+                        <option value="3rd Year">
+                            3rd Year
+                        </option>
+
+                        <option value="4th Year">
+                            4th Year
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Continue Button -->
                 <button type="submit">
                     Continue to Prediction →
                 </button>
 
             </form>
 
+
+            <!-- Footer -->
             <div class="footer">
                 © 2026 Student Performance Prediction System
             </div>
@@ -312,27 +395,64 @@
 
             event.preventDefault();
 
-            // Get student details
-            let name = document.getElementById("name").value;
-            let email = document.getElementById("email").value;
-            let phone = document.getElementById("phone").value;
-            let branch = document.getElementById("branch").value;
-            let course = document.getElementById("course").value;
-            let year = document.getElementById("year").value;
-            let semester = document.getElementById("semester").value;
+            // Get student information
+            const name =
+                document.getElementById("name").value;
 
-            // Save details in browser
-            localStorage.setItem("studentName", name);
-            localStorage.setItem("studentEmail", email);
-            localStorage.setItem("studentPhone", phone);
-            localStorage.setItem("studentBranch", branch);
-            localStorage.setItem("studentCourse", course);
-            localStorage.setItem("studentYear", year);
-            localStorage.setItem("studentSemester", semester);
+            const email =
+                document.getElementById("email").value;
 
-            // OPEN YOUR STREAMLIT PREDICTION SYSTEM
+            const phone =
+                document.getElementById("phone").value;
+
+            const branch =
+                document.getElementById("branch").value;
+
+            const course =
+                document.getElementById("course").value;
+
+            const year =
+                document.getElementById("year").value;
+
+
+            // Store information in browser
+            localStorage.setItem(
+                "studentName",
+                name
+            );
+
+            localStorage.setItem(
+                "studentEmail",
+                email
+            );
+
+            localStorage.setItem(
+                "studentPhone",
+                phone
+            );
+
+            localStorage.setItem(
+                "studentBranch",
+                branch
+            );
+
+            localStorage.setItem(
+                "studentCourse",
+                course
+            );
+
+            localStorage.setItem(
+                "studentYear",
+                year
+            );
+
+
+            /*
+             * Open Streamlit Prediction System
+             */
             window.location.href =
                 "https://studentperformanceprediction-system-mohfrg8np6nsn4rivaiyek.streamlit.app/";
+
         }
 
     </script>
