@@ -8,6 +8,7 @@
     <title>Student Performance Prediction System</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -17,6 +18,7 @@
 
         body {
             min-height: 100vh;
+
             display: flex;
             justify-content: center;
             align-items: center;
@@ -36,14 +38,14 @@
         }
 
         .form-box {
-            background: #ffffff;
+            background: white;
 
             padding: 35px;
 
             border-radius: 20px;
 
             box-shadow:
-                0 15px 40px rgba(0, 0, 0, 0.15);
+                0 15px 40px rgba(0,0,0,0.15);
         }
 
         .logo {
@@ -69,8 +71,6 @@
             color: #1e3a8a;
 
             font-size: 28px;
-
-            margin-bottom: 5px;
         }
 
         h2 {
@@ -80,7 +80,7 @@
 
             font-size: 20px;
 
-            margin-bottom: 10px;
+            margin-top: 5px;
         }
 
         .subtitle {
@@ -90,7 +90,7 @@
 
             font-size: 14px;
 
-            margin-bottom: 25px;
+            margin: 12px 0 25px;
         }
 
         .form-group {
@@ -125,11 +125,9 @@
 
             font-size: 15px;
 
-            background: #ffffff;
+            background: white;
 
             outline: none;
-
-            transition: 0.3s;
         }
 
         input:focus,
@@ -137,7 +135,7 @@
             border-color: #2563eb;
 
             box-shadow:
-                0 0 0 3px rgba(37, 99, 235, 0.12);
+                0 0 0 3px rgba(37,99,235,0.12);
         }
 
         button {
@@ -160,14 +158,10 @@
             font-weight: bold;
 
             cursor: pointer;
-
-            transition: 0.3s;
         }
 
         button:hover {
             background: #1d4ed8;
-
-            transform: translateY(-2px);
         }
 
         .footer {
@@ -180,296 +174,289 @@
             font-size: 12px;
         }
 
-        @media (max-width: 600px) {
-
-            .form-box {
-                padding: 25px 20px;
-            }
-
-            h1 {
-                font-size: 24px;
-            }
-
-            h2 {
-                font-size: 18px;
-            }
-        }
     </style>
+
 </head>
 
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <div class="form-box">
+    <div class="form-box">
 
-            <div class="logo">
-                🎓
+        <div class="logo">
+            🎓
+        </div>
+
+        <h1>
+            Student Performance
+        </h1>
+
+        <h2>
+            Prediction System
+        </h2>
+
+        <p class="subtitle">
+            Enter your details to continue
+        </p>
+
+
+        <form onsubmit="continueToPrediction(event)">
+
+
+            <!-- NAME -->
+
+            <div class="form-group">
+
+                <label>
+                    Student Name
+                    <span class="required">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
             </div>
 
-            <h1>
-                Student Performance
-            </h1>
 
-            <h2>
-                Prediction System
-            </h2>
+            <!-- EMAIL -->
 
-            <p class="subtitle">
-                Enter your details to continue
-            </p>
+            <div class="form-group">
 
+                <label>
+                    Gmail
+                    <span class="required">*</span>
+                </label>
 
-            <form onsubmit="continueToPrediction(event)">
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="example@gmail.com"
+                    required
+                >
 
-
-                <!-- Student Name -->
-                <div class="form-group">
-
-                    <label for="name">
-                        Student Name
-                        <span class="required">*</span>
-                    </label>
-
-                    <input
-                        type="text"
-                        id="name"
-                        placeholder="Enter your full name"
-                        required
-                    >
-
-                </div>
-
-
-                <!-- Gmail -->
-                <div class="form-group">
-
-                    <label for="email">
-                        Gmail
-                        <span class="required">*</span>
-                    </label>
-
-                    <input
-                        type="email"
-                        id="email"
-                        placeholder="example@gmail.com"
-                        required
-                    >
-
-                </div>
-
-
-                <!-- Phone -->
-                <div class="form-group">
-
-                    <label for="phone">
-                        Phone Number
-                        <span class="required">*</span>
-                    </label>
-
-                    <input
-                        type="tel"
-                        id="phone"
-                        placeholder="Enter 10-digit phone number"
-                        pattern="[0-9]{10}"
-                        maxlength="10"
-                        required
-                    >
-
-                </div>
-
-
-                <!-- Branch -->
-                <div class="form-group">
-
-                    <label for="branch">
-                        Branch
-                        <span class="required">*</span>
-                    </label>
-
-                    <select id="branch" required>
-
-                        <option value="">
-                            Select your branch
-                        </option>
-
-                        <option value="CSE">
-                            Computer Science & Engineering
-                        </option>
-
-                        <option value="IT">
-                            Information Technology
-                        </option>
-
-                        <option value="ECE">
-                            Electronics & Communication Engineering
-                        </option>
-
-                        <option value="EEE">
-                            Electrical & Electronics Engineering
-                        </option>
-
-                        <option value="ME">
-                            Mechanical Engineering
-                        </option>
-
-                        <option value="CE">
-                            Civil Engineering
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <!-- Course -->
-                <div class="form-group">
-
-                    <label for="course">
-                        Course
-                        <span class="required">*</span>
-                    </label>
-
-                    <select id="course" required>
-
-                        <option value="">
-                            Select your course
-                        </option>
-
-                        <option value="B.Tech">
-                            B.Tech
-                        </option>
-
-                        <option value="BCA">
-                            BCA
-                        </option>
-
-                        <option value="B.Sc">
-                            B.Sc
-                        </option>
-
-                        <option value="MCA">
-                            MCA
-                        </option>
-
-                        <option value="M.Tech">
-                            M.Tech
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <!-- Year -->
-                <div class="form-group">
-
-                    <label for="year">
-                        Year
-                        <span class="required">*</span>
-                    </label>
-
-                    <select id="year" required>
-
-                        <option value="">
-                            Select your year
-                        </option>
-
-                        <option value="1st Year">
-                            1st Year
-                        </option>
-
-                        <option value="2nd Year">
-                            2nd Year
-                        </option>
-
-                        <option value="3rd Year">
-                            3rd Year
-                        </option>
-
-                        <option value="4th Year">
-                            4th Year
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <!-- Button -->
-                <button type="submit">
-                    Continue to Prediction →
-                </button>
-
-            </form>
-
-
-            <div class="footer">
-                © 2026 Student Performance Prediction System
             </div>
 
+
+            <!-- PHONE -->
+
+            <div class="form-group">
+
+                <label>
+                    Phone Number
+                    <span class="required">*</span>
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Enter 10-digit phone number"
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    required
+                >
+
+            </div>
+
+
+            <!-- BRANCH -->
+
+            <div class="form-group">
+
+                <label>
+                    Branch
+                    <span class="required">*</span>
+                </label>
+
+                <select id="branch" required>
+
+                    <option value="">
+                        Select your branch
+                    </option>
+
+                    <option value="CSE">
+                        Computer Science & Engineering
+                    </option>
+
+                    <option value="IT">
+                        Information Technology
+                    </option>
+
+                    <option value="ECE">
+                        Electronics & Communication Engineering
+                    </option>
+
+                    <option value="EEE">
+                        Electrical & Electronics Engineering
+                    </option>
+
+                    <option value="ME">
+                        Mechanical Engineering
+                    </option>
+
+                    <option value="CE">
+                        Civil Engineering
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- COURSE -->
+
+            <div class="form-group">
+
+                <label>
+                    Course
+                    <span class="required">*</span>
+                </label>
+
+                <select id="course" required>
+
+                    <option value="">
+                        Select your course
+                    </option>
+
+                    <option value="B.Tech">
+                        B.Tech
+                    </option>
+
+                    <option value="BCA">
+                        BCA
+                    </option>
+
+                    <option value="B.Sc">
+                        B.Sc
+                    </option>
+
+                    <option value="MCA">
+                        MCA
+                    </option>
+
+                    <option value="M.Tech">
+                        M.Tech
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- YEAR -->
+
+            <div class="form-group">
+
+                <label>
+                    Year
+                    <span class="required">*</span>
+                </label>
+
+                <select id="year" required>
+
+                    <option value="">
+                        Select your year
+                    </option>
+
+                    <option value="1st Year">
+                        1st Year
+                    </option>
+
+                    <option value="2nd Year">
+                        2nd Year
+                    </option>
+
+                    <option value="3rd Year">
+                        3rd Year
+                    </option>
+
+                    <option value="4th Year">
+                        4th Year
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button type="submit">
+                Continue to Prediction →
+            </button>
+
+        </form>
+
+
+        <div class="footer">
+            © 2026 Student Performance Prediction System
         </div>
 
     </div>
 
-
-    <script>
-
-        function continueToPrediction(event) {
-
-            event.preventDefault();
-
-            // Get student information
-            const name =
-                document.getElementById("name").value;
-
-            const email =
-                document.getElementById("email").value;
-
-            const phone =
-                document.getElementById("phone").value;
-
-            const branch =
-                document.getElementById("branch").value;
-
-            const course =
-                document.getElementById("course").value;
-
-            const year =
-                document.getElementById("year").value;
+</div>
 
 
-            // Create URL parameters
-            const params = new URLSearchParams({
+<script>
 
-                name: name,
+function continueToPrediction(event) {
 
-                email: email,
-
-                phone: phone,
-
-                branch: branch,
-
-                course: course,
-
-                year: year
-
-            });
+    event.preventDefault();
 
 
-            // Your Streamlit application
-            const streamlitURL =
-                "https://studentperformanceprediction-system-mohfrg8np6nsn4rivaiyek.streamlit.app/";
+    const name =
+        document.getElementById("name").value;
+
+    const email =
+        document.getElementById("email").value;
+
+    const phone =
+        document.getElementById("phone").value;
+
+    const branch =
+        document.getElementById("branch").value;
+
+    const course =
+        document.getElementById("course").value;
+
+    const year =
+        document.getElementById("year").value;
 
 
-            // Open Streamlit with student information
-            window.location.href =
-                streamlitURL + "?" + params.toString();
+    /*
+       Send student data to Streamlit
+    */
 
-        }
+    const params = new URLSearchParams({
 
-    </script>
+        name: name,
+
+        email: email,
+
+        phone: phone,
+
+        branch: branch,
+
+        course: course,
+
+        year: year
+
+    });
+
+
+    const streamlitURL =
+        "https://studentperformanceprediction-system-mohfrg8np6nsn4rivaiyek.streamlit.app/";
+
+
+    window.location.href =
+        streamlitURL + "?" + params.toString();
+
+}
+
+</script>
 
 </body>
 
